@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="domain">
+	<class name="domain.Student" ><!-- dynamic-update="true"这个字段可以控制只更新单独的字段 -->
+	
+	<!--联合主键XML方式 	<composite-id name="" class="">
+			<key-property name=""></key-property>
+			<key-property name=""></key-property>
+		</composite-id>
+	 -->	
+	 
+	 		<id name="id" column="id">
+			<generator class="native"></generator>
+			
+			<!--<generator class="uuid"></generator>生成uuid-->
+			<!--<generator class="sequence"></generator>生成oracle的sequence-->		
+		</id>
+		<property name="name" column="name" ></property>
+		<property name="age" column="age"></property>
+	</class>
+
+</hibernate-mapping>

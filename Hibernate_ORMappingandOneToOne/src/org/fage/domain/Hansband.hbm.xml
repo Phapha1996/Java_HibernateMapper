@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="domain">
+<!-- 注意当文件无用，只是拿来作参考，有单项关联，有双向关联 -->
+	<class name="org.fage.domain.Hansband" ><!-- dynamic-update="true"这个字段可以控制只更新单独的字段 -->
+	 
+	 		<id name="id" column="id">
+				<generator class="native"></generator>
+			</id>
+		<property name="name" column="name" ></property>
+		<property name="birthday" column="birthday"></property>
+		<!-- 如果仅仅是单项关联，下面这条标签不需要设置 -->
+		<one-to-one name="wife" property-ref="hansband"></one-to-one><!-- 双向关联的时候，那边是manytoone，这边是onetoone -->
+	</class>
+
+</hibernate-mapping>
